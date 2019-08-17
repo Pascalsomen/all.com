@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Web Master Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+   
+<script src="https://use.fontawesome.com/c6e55ed2d7.js"></script>
+
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+mdl-layout--fixed-header">
+<header class="mdl-layout__header">
+<div class="mdl-layout__header-row">
+<div class="mdl-layout-spacer"></div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+      mdl-textfield--floating-label mdl-textfield--align-right">
+<label class="mdl-button mdl-js-button mdl-button--icon"
+   for="fixed-header-drawer-exp">
+<i class="material-icons">search</i>
+</label>
+<div class="mdl-textfield__expandable-holder">
+<input class="mdl-textfield__input" type="text" name="sample"
+     id="fixed-header-drawer-exp">
+</div>
+</div>
+</div>
+</header>
+<div class="mdl-layout__drawer">
+
+<span class="mdl-layout-title">  <%= company_name %></span>
+<nav class="mdl-navigation">
+<a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Home </a>
+<a class="mdl-navigation__link" href="/services?id=<%=company_id %>"> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Services</a>
+<a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>   Info </a>
+<a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>   Location </a>
+<a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>   Gallery </a>
+<a class="mdl-navigation__link" href="/company-profile?company=<%= company_id %>">  <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>    Company Profile </a>
+<hr>
+<a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help & Support </a>
+<a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings </a>
+</nav>
+</div>
+<div class="mdl-layout__content">
+<div class="page-content">
+<div class="row profile-info">
+
+
+    <div class="col-md-12" >
+        <h6>  <%= company_name %></h6>
+      <h6 name="id">   <%= company_id %></h6>
+         
+   <div class="w3-card">
+   <h2> Enable geo Location </h2>
+
+    <p>Let your  customer  be able to find you online with google map</p>
+    <form method="POST" action="/map">
+      <textarea name="mapCode" class="form-control" placeholder="copy google map iframe codes here......"></textarea>
+    </br>
+   <button class="btn btn-info">Save</button>
+      </form>
+    
+   </div>
+        <hr>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2041612.1391282412!2d28.7589355944363!3d-1.9432847044333001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c29654e73840e3%3A0x7490b026cbcca103!2sRwanda!5e0!3m2!1sen!2srw!4v1565434783434!5m2!1sen!2srw" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+
+</div>
+</main>
+</div>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+
+   
+  </body>
+</html>

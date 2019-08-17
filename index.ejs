@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Home - Search any services online </title>
+
+    <!-- Bootstrap -->
+<link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+   
+<script src="https://use.fontawesome.com/c6e55ed2d7.js"></script>
+
+    <!-- Custom css -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/w3design.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <div class="row">
+     
+          <div class="col-md-12">
+
+                <nav class="navbar home-navbar navbar-default">
+                        <div class="container-fluid">
+                          <!-- Brand and toggle get grouped for better mobile display -->
+                          <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Business Directories</a>
+                          </div>
+                      
+                          <!-- Collect the nav links, forms, and other content for toggling -->
+                          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                             
+                            
+                            </ul>
+                            
+                            <ul class="nav navbar-nav navbar-right">
+                                    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                                   
+                                   
+                                
+
+                                      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Finance and Banking <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/companies?id=5d492d711e21ae29f8c1a245&&category=Banks">Banks</a></li>
+            <li><a href="#">Micro finance</a></li>
+            <li><a href="#">Forex Bureoux</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">More..</a></li>
+          </ul>
+        </li>
+      
+                                    
+
+                                    <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Finance and Banking <span class="caret"></span></a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="/companies?id=5d492da11e21ae29f8c1a248&&category=restobar">Resto bar</a></li>
+                                        <li><a href="#">Micro finance</a></li>
+                                        <li><a href="#">Forex Bureoux</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">More..</a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="#">Travel and insuarance</a></li>
+                                    <li><a href="#">Health  and Education</a></li>
+                                    <li><a href="/user-login">Login</a></li>
+                             
+                            </ul>
+                          </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                      </nav>
+
+          </div>
+          <div class="col-md-12 search-section" style="background-image:url('./images/bg2.jpg')">
+              <div class="row">
+                  
+                  <div class="col-md-8 col-md-push-2">
+<form>
+  <input type="text"  class=" form-control home-search" placeholder="Search any service here....">
+</form>
+<div class="row">
+  <div class="col-md-2  w3-card home-card">
+    <h4>Restorent</h4>
+    </div>
+    <div class="col-md-2 w3-card home-card">
+        <h4>Hotels</h4>
+        </div>
+        <div class="col-md-2 w3-card  home-card">
+            <h4>Banks</h4>
+            </div>
+            <div class="col-md-2 w3-card  home-card">
+                <h4>Clubs</h4>
+                </div>
+                <div class="col-md-2 w3-card  home-card">
+                    <h4>Schools</h4>
+                    </div>
+                    
+                        
+  </div>
+  
+              </div>
+            </div>
+        </div>
+              <div class="col-md-12">
+              <h4>    Popular Services</h4>
+                  <hr>
+
+                  <% for(var i=0; i<row.length; i++) {%>
+                         
+  
+
+                      <div class="col-md-2">
+
+                          
+                              <img src="./uploads/<%= row[i].icon %>" class="img-responsive">
+                                  <H4><%= row[i].name %></H4>
+                                  <p><%= row[i].description %></p>
+                               
+                             
+                              
+                             
+                          </div>
+
+
+                    <% } %>
+                  
+                      
+                        
+   </div>
+          </div>
+    
+          <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer__middle-section">
+          
+              <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">Features</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Updates</a></li>
+                </ul>
+              </div>
+          
+              <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">Details</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">Specs</a></li>
+                  <li><a href="#">Tools</a></li>
+                  <li><a href="#">Resources</a></li>
+                </ul>
+              </div>
+          
+              <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">Technology</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">How it works</a></li>
+                  <li><a href="#">Patterns</a></li>
+                  <li><a href="#">Usage</a></li>
+                  <li><a href="#">Products</a></li>
+                  <li><a href="#">Contracts</a></li>
+                </ul>
+              </div>
+          
+              <div class="mdl-mega-footer__drop-down-section">
+                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer__heading">FAQ</h1>
+                <ul class="mdl-mega-footer__link-list">
+                  <li><a href="#">Questions</a></li>
+                  <li><a href="#">Answers</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+          
+            </div>
+          
+            <div class="mdl-mega-footer__bottom-section">
+              <div class="mdl-logo">Title</div>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy & Terms</a></li>
+              </ul>
+            </div>
+          
+          </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="js/custom.js"></script>
+    <script src="mdl/material.js"></script>
+
+   
+  </body>
+</html>

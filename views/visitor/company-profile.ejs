@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Web Master Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+    
+<script src="https://use.fontawesome.com/c6e55ed2d7.js"></script>
+<link rel="stylesheet" href="./dist/cropper.css">
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class ="row">
+      <div class="col-md-12">
+
+       
+        <nav class="navbar home-navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Business Directories</a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+               
+              
+              </ul>
+              
+              <ul class="nav navbar-nav navbar-right">
+                      <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                     
+                     
+                  
+
+                        <li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Finance and Banking <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/companies?id=5d492d711e21ae29f8c1a245&&category=Banks">Banks</a></li>
+<li><a href="#">Micro finance</a></li>
+<li><a href="#">Forex Bureoux</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">More..</a></li>
+</ul>
+</li>
+
+                      
+
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Finance and Banking <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="/companies?id=5d492da11e21ae29f8c1a248&&category=restobar">Resto bar</a></li>
+                          <li><a href="#">Micro finance</a></li>
+                          <li><a href="#">Forex Bureoux</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">More..</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Travel and insuarance</a></li>
+                      <li><a href="#">Health  and Education</a></li>
+                      <li><a href="/user-login">Login</a></li>
+               
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+    </div>
+<hr>
+    <div class="col-md-2 spacing hidden-sm hidden-xs">
+        <H4>Popular services</H4>
+        <a href="" class="btn btn-link">Banks</a>
+        <br>
+        <a href="" class="btn btn-link">ATMs</a><br>
+        <a href="" class="btn btn-link">Bar Resto</a>  <br>
+        <a href="" class="btn btn-link">Hotels</a> <br>
+        <a href="" class="btn btn-link">Transports</a> <br>
+        <H4>Locations</H4>
+        <a href="" class="btn btn-link">Kigali</a>
+        <br>
+        <a href="" class="btn btn-link">Nyarugenge</a><br>
+        <a href="" class="btn btn-link">Muhima</a>  <br>
+        <a href="" class="btn btn-link">Kacyiru</a> <br>
+        <a href="" class="btn btn-link">Remera</a> <br>
+        <a href="" class="btn btn-link">Kimirinko</a> <br>
+        </div>
+
+    <div class="col-md-9 profile-container">
+      <div class="row">
+    <% for(var i=0; i<user.length; i++) {%>
+
+    <div class="col-md-3">
+    <img src="<%= user[i].cover %>" class="img-responsive">
+    </div>
+    <div class="col-md-5">
+        <h2> <%= user[i].name %></H2>
+          <br>
+          <label>E-Mail:</label> <%= user[i].email %>
+          <br>
+           <label> Phone number: </label> <%= user[i].phone %>"
+           <label>City/State</label>
+                            
+           <%= user[i].city %>
+           <br>
+
+           <label> Company  Address </label>
+               
+          <%= user[i].sector %>
+
+           <label> ZipCode </label>
+               
+           <%= user[i].zipcode %>
+
+           <br>
+           <label> Street number </label>
+               
+            <%= user[i].street %>"
+        </div>
+  
+                    
+                        <div class="col-md-4">
+
+                            <%- user[i].mapCode %>        
+                        </div>
+                     
+                        <% } %>
+    <hr>
+
+ 
+    </div> 
+    
+
+      <div class="w3-bar w3-black">
+          <button class="btn btn-link" onclick="openCity('Paris')">Services</button>
+          <button class="btn btn-link" onclick="openCity('London')">Working Hours</button>
+          <% if(category=="5d492d711e21ae29f8c1a245"){ %>
+            <button class="btn btn-link" onclick="openCity('atms')">ATMs</button>
+            <button class="btn btn-link" onclick="openCity('branch')">Branches</button>
+            <% } %>
+            <% if(category=="5d492da11e21ae29f8c1a248"){ %>
+              <button class="btn btn-link" onclick="openCity('menu')">Menus</button>
+            
+              <% } %>
+          <button class="btn btn-link" onclick="openCity('Tokyo')">About</button>
+          <button class="btn btn-link" onclick="openCity('Tokyo')">Contacts</button>
+       
+     
+      <hr>
+        </div>
+  
+        <div id="London" class="w3-container city">
+		
+          <h2>Working Hours</h2>
+		        <table class="table table-bordered">
+          <% for(var i=0; i<row.length; i++) {%>
+                               
+    <tr>
+      <td>
+        Monday
+        </td>
+        <td>
+        <%= row[i].mondayOpen %>
+        </td>
+        <td>
+            <%= row[i].mondayClose %>
+            </td>
+        </tr>
+      <tr>
+        <td>
+            Tuesday
+            </td>
+            <td>
+            <%= row[i].mondayOpen %>
+            </td>
+            <td>
+                <%= row[i].mondayClose %>
+                </td>
+            </tr>
+            <tr>
+            <td>
+                wensday
+                </td>
+                <td>
+                <%= row[i].mondayOpen %>
+                </td>
+                <td>
+                    <%= row[i].mondayClose %>
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                    thursday
+                    </td>
+                    <td>
+                    <%= row[i].mondayOpen %>
+                    </td>
+                    <td>
+                        <%= row[i].mondayClose %>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        friday
+                        </td>
+                        <td>
+                        <%= row[i].mondayOpen %>
+                        </td>
+                        <td>
+                            <%= row[i].mondayClose %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Surtday
+                                </td>
+                                <td>
+                                <%= row[i].mondayOpen %>
+                                </td>
+                                <td>
+                                    <%= row[i].mondayClose %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Sunday
+                                        </td>
+                                        <td>
+                                        <%= row[i].mondayOpen %>
+                                        </td>
+                                        <td>
+                                            <%= row[i].mondayClose %>
+                                            </td>
+                                        </tr>
+                        
+
+              
+          
+            <% } %> 
+                                      </table>
+        </div>
+
+        <div id="Paris" class="w3-container city" style="display:none">
+          <h2>Services</h2>
+          <% for(var i=0; i<service.length; i++) {%>
+                               
+    
+      
+              <div class="col-md-3">
+          
+                  <div class="w3-card">
+                      <img src="./uploads/<%= service[i].icon %>" class="img-responsive">
+                          <H4><%= service[i].name %></H4>
+                          <p><%= service[i].description %></p>
+                        </div> 
+          
+                     
+                  </div>
+          
+          
+            <% } %> 
+        </div>
+        
+        <div id="Tokyo" class="w3-container city" style="display:none">
+         
+       
+        </div>
+
+        <div id="atms" class="w3-container city" style="display:none">
+         
+          <% for(var i=0; i<atms.length; i++) {%>
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+
+                   
+                        <%- atms[i].mapCode %>   
+                      
+                  
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><a href="/profile?id=<%= branch[i]._id %>&&name=<%= branch[i].name %>"><%= atms[i].name %></a></h4>
+                <%= atms[i].district %>  <%= atms[i].city %>
+                <br>
+                <%= atms[i].phone %>  <%= atms[i].email %> 
+  
+              
+              </div>
+              <div class="media-right hidden-xs hidden-sm">
+                  <a href="#">
+                     
+                  </a>
+                </div>
+  
+            </div>
+         <%}%>
+        </div>
+        <div id="branch" class="w3-container city" style="display:none">
+         
+
+          <% for(var i=0; i<branch.length; i++) {%>
+            <div class="col-md-6">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <%- branch[i].mapCode %>  
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="/profile?id=<%= branch[i]._id %>&&name=<%= branch[i].name %>"><%= branch[i].name %></a></h4>
+              <%= branch[i].district %>  <%= branch[i].city %>
+              <br>
+              <%= branch[i].phone %>  <%= branch[i].email %> 
+
+            
+            </div>
+            <div class="media-right hidden-xs hidden-sm">
+                <a href="#">
+                   
+                </a>
+              </div>
+
+          </div>
+        </div>
+       <%}%>
+        </div>
+        <div id="menu" class="w3-container city" style="display:none">
+          <% for(var i=0; i<menus.length; i++) {%>
+                        <div class="col-md-3">
+                          <div class="media">
+                            <div class="media-left">
+                              <a href="#">
+                                  <img id="img" src="./uploads/<%= menus[i].icon %>" height="100" width="100">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="/profile?id=<%= branch[i]._id %>&&name=<%= branch[i].name %>"><%= menus[i].name %></a></h4>
+                              <p><%= menus[i].description %></p>
+
+                            </div>
+                          </div>
+                        </div>
+        
+        
+          <% } %> 
+       
+        </div>
+   
+            </div>
+     
+ </div>
+</div>
+  <hr>
+  <footer class="mdl-mega-footer">
+      <div class="mdl-mega-footer__middle-section">
+    
+        <div class="mdl-mega-footer__drop-down-section">
+          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+          <h1 class="mdl-mega-footer__heading">Features</h1>
+          <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Updates</a></li>
+          </ul>
+        </div>
+    
+        <div class="mdl-mega-footer__drop-down-section">
+          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+          <h1 class="mdl-mega-footer__heading">Details</h1>
+          <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">Specs</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+    
+        <div class="mdl-mega-footer__drop-down-section">
+          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+          <h1 class="mdl-mega-footer__heading">Technology</h1>
+          <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Patterns</a></li>
+            <li><a href="#">Usage</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contracts</a></li>
+          </ul>
+        </div>
+    
+        <div class="mdl-mega-footer__drop-down-section">
+          <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+          <h1 class="mdl-mega-footer__heading">FAQ</h1>
+          <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">Questions</a></li>
+            <li><a href="#">Answers</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+    
+      </div>
+    
+      <div class="mdl-mega-footer__bottom-section">
+        <div class="mdl-logo">Title</div>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    
+    </footer>
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+    <script src="./dist/cropper.js"></script>
+    <script>
+        function openCity(cityName) {
+          var i;
+          var x = document.getElementsByClassName("city");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          document.getElementById(cityName).style.display = "block";  
+        }
+        </script>
+    <script>
+        $(document).ready(function(){
+         
+          $("iframe").css('width', 'auto')
+          $("iframe").css('height', 'auto')
+          $("iframe").addClass("embed-responsive-item");
+         
+          
+        
+          }); 
+          </script>
+   
+  </body>
+</html>

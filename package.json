@@ -1,0 +1,26 @@
+{
+  "name": "brighter",
+  "version": "1.0.0",
+  "description": "all.com",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "formidable": "^1.2.1",
+    "jquery": "^3.4.1",
+    "mongodb": "^3.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "panatech",
+  "license": "ISC"
+}

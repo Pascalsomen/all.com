@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Authentication</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+    
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+  <div class="row">
+  <div class="col-md-4">
+</div>
+       <div class="col-md-4">
+           <div class="login-panel">
+          <h5>Authentication</h5>
+          <hr>
+          
+        <label for="login">E-Mail</label>
+        <input class="form-control" type="email" name="email" id="email" placeholder="Type your E-Mail..." >
+        <p id="email-error-message"></p>
+        <label for="login">Password</label>
+        <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+       <br>
+       <input  type="checkbox"  id="remember" class="keep-logged" name="chk[]"> Keep me logged in
+       <br>
+       <br>
+       <p id="field-error"></p>
+<button type="submit" id="login-button" class="btn btn-primary pull-right">Login</button>
+<a href="/dashboard">Home</a>
+
+<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+
+<br>
+       </div>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+
+   
+  </body>
+</html>

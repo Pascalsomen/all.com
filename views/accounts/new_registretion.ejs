@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Web Master Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+    
+<script src="https://use.fontawesome.com/c6e55ed2d7.js"></script>
+
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+mdl-layout--fixed-header">
+<header class="mdl-layout__header">
+<div class="mdl-layout__header-row">
+<div class="mdl-layout-spacer"></div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+      mdl-textfield--floating-label mdl-textfield--align-right">
+<label class="mdl-button mdl-js-button mdl-button--icon"
+   for="fixed-header-drawer-exp">
+<i class="material-icons">search</i>
+</label>
+<div class="mdl-textfield__expandable-holder">
+<input class="mdl-textfield__input" type="text" name="sample"
+     id="fixed-header-drawer-exp">
+</div>
+</div>
+</div>
+</header>
+<div class="mdl-layout__drawer">
+
+    <img src="./images/avatar.png" class="img-avatar">
+<span class="mdl-layout-title">Username</span>
+<nav class="mdl-navigation">
+<a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>  Home </a>
+<a class="mdl-navigation__link" href="/categories"> <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Campany</a>
+<a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Events </a>
+<a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Profile </a>
+<a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings </a>
+</nav>
+</div>
+<h5 class="mdl-layout__content">
+<div class="page-content">
+<div class="row profile-info">
+
+
+    <div class="col-md-12" >
+
+         
+                
+                
+                <div class="row card-content">
+                      <center>  <h3>Company Registartion </h3></center>
+                        <hr>
+                        <div class="col-md-6 ">
+                         
+                        
+                        <Form method="POST" action="/CreateCompany">
+                            <label> Campany name</label>
+                            
+                        <input type="text" name = "name" class="form-control" placeholder="eg. panatech ltd">
+
+                        <label> Company category</label>
+                            
+                       <select class="form-control" name = "cat">
+                          <% for(var i=0; i<cat.length; i++) {%>
+                              <option value="<%= cat[i]._id %>"><%= cat[i].name %></option>
+
+                          <% } %>     
+                        
+                       </select>
+                       
+
+                        <label>Email</label>
+                            
+                        <input name = "email" type="text" class="form-control" placeholder="eg. company@email.com">
+                        
+                        <label> Phone number</label>
+                            
+                        <input name = "phone" type="text" class="form-control" placeholder="eg +2507XXXXXXX">
+                      
+
+                        
+                        </div>
+                        <div class="col-md-6">
+                         
+                            <label>City/State</label>
+                            
+                        <input type="text" name = "city" class="form-control" placeholder="City">
+
+                        <label> Company  Address </label>
+                            
+                        <input type="text" name = "sector" class="form-control" placeholder="e.g district/sector">
+
+                        <label> ZipCode </label>
+                            
+                        <input type="text" name = "ZipCode" class="form-control" placeholder="Optional">
+
+                        <label> Street number </label>
+                            
+                        <input type="text" name = "street" class="form-control" placeholder="e.g KN 89 ST">
+                        
+                        
+                            </div>
+<br>
+                           
+                     
+                        <br>
+                       
+                        </div>
+                        <hr>
+                        <button class=" btn btn-primary  pull-right ">Create Now</button>
+                      </Form>
+    </div>
+   
+        <hr>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+
+</div>
+</main>
+</div>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+
+   
+  </body>
+</html>

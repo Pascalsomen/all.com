@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>SignUp</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+    
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+  <div class="row">
+  <div class="col-md-4">
+</div>
+       <div class="col-md-4">
+           <div class="login-panel">
+          <h5>New  Account</h5>
+          <hr> 
+          <form method="post" action="/form-register" enctype="multipart/form-data">
+        <label for="login">Your Names</label>
+           <input class="form-control" type="text" name="name" id="email" placeholder="eg. Pascal SOMEN" required >
+           <label for="login">E-mail</label>
+        <input class="form-control" type="email" name="email" id="email" placeholder="eg. someone@email.com"  required>
+        
+        <label for="login">Password</label>
+        <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
+        <label for="login">Confirm Password</label>
+        <input class="form-control" type="password" name="passwor" id="password" placeholder="Confirm nPassword">
+       <br>
+       <input  type="checkbox"  id="remember" class="keep-logged" name="chk[]"> I accept and agree with<a href="" required> terms and conditions</a>
+       <br>
+       <br>
+       <p id="field-error"></p>
+        <button type="submit" id="" class="btn btn-primary pull-right">Register Now</button>
+
+
+<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+</form>
+
+<br>
+       </div>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+
+   
+  </body>
+</html>

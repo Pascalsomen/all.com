@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Web Master Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+<script src="https://use.fontawesome.com/c6e55ed2d7.js"></script>
+
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+mdl-layout--fixed-header">
+<header class="mdl-layout__header">
+<div class="mdl-layout__header-row">
+<div class="mdl-layout-spacer"></div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+      mdl-textfield--floating-label mdl-textfield--align-right">
+<label class="mdl-button mdl-js-button mdl-button--icon"
+   for="fixed-header-drawer-exp">
+<i class="material-icons">search</i>
+</label>
+<div class="mdl-textfield__expandable-holder">
+<input class="mdl-textfield__input" type="text" name="sample"
+     id="fixed-header-drawer-exp">
+</div>
+</div>
+</div>
+</header>
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout-title">  <%= company_name %></span>
+  <nav class="mdl-navigation">
+    <a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Home </a>
+    <a class="mdl-navigation__link" href="/services?id=<%=company_id %>"> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Services</a>
+    <a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>   Info </a>
+    <a class="mdl-navigation__link" href="/geo-location?id=<%=company_id %>">  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>   Location </a>
+    <a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>   Gallery </a>
+    <a class="mdl-navigation__link" href="/company-profile?company=<%= company_id %>">  <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>    Company Profile </a>
+    <hr>
+    <a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help & Support </a>
+    <a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings </a>
+</nav>
+</div>
+<id class="mdl-layout__content">
+<div class="page-content">
+<div class="row profile-info">
+
+
+    <div class="col-md-12" >
+
+         
+                
+                
+                <div class="row profile-details">
+                      <center>  <h3>   Company Services </h3></center>
+                        <hr>
+                        <div class="col-md-8">
+                             <h6 name="id">   <%= company_id %></id>
+                  <div class="row">
+
+                
+                      <% for(var i=0; i<row.length; i++) { %>
+
+                          <div class="col-md-4">
+                              <img src="./uploads/<%= row[i].icon %>" class="img-responsive image-view">
+                              <h3><%= row[i].name %></h3>
+                              <h4><%= row[i].description %></h4>
+                             
+                          </div>
+
+
+                        <% } %>
+                      
+                        
+                            
+                                
+                                    
+                  </div>
+                            
+                        
+                      
+
+                        
+                        </div>
+                        <div class="col-md-4">
+                                <form  method ="POST" encType="multipart/form-data" action="/addMenus">
+                         <h5> Add New Menus</h5>
+                         <hr>
+                            <label>Name</label>
+
+                            
+                        <input type="text" name="name" class="form-control" placeholder="Services Name">
+
+                        <label> Icon / image</label>
+                            
+                        <input type="file" name="sampleFile" class="form-control">
+
+                        <label> Descriptions </label>
+                            
+                        <textarea cols="2" name="descri" rows="5" placeholder="Menu ingrediant / descriptions" class="form-control"></textarea>
+<hr>
+                        <button class="btn btn-primary  pull-right ">Add to Menu</button>
+                        
+                        </Form>
+
+
+                      
+                            </div>
+<br>
+                           
+                        <hr>
+                        
+                        
+                        </div>
+                   
+    </div>
+   
+        <hr>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+
+</div>
+</main>
+</div>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+
+   
+  </body>
+</html>

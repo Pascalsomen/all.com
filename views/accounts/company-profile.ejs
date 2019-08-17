@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Web Master Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="./mdl/material.css" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+    
+<script src="https://use.fontawesome.com/c6e55ed2d7.js"></script>
+<link rel="stylesheet" href="./dist/cropper.css">
+    <!-- Custom css -->
+    <link href="./css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+mdl-layout--fixed-header">
+<header class="mdl-layout__header">
+<div class="mdl-layout__header-row">
+<div class="mdl-layout-spacer"></div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+      mdl-textfield--floating-label mdl-textfield--align-right">
+<label class="mdl-button mdl-js-button mdl-button--icon"
+   for="fixed-header-drawer-exp">
+<i class="material-icons">search</i>
+</label>
+<div class="mdl-textfield__expandable-holder">
+<input class="mdl-textfield__input" type="text" name="sample"
+     id="fixed-header-drawer-exp">
+</div>
+</div>
+</div>
+</header>
+<div class="mdl-layout__drawer">
+
+    <img src="./images/avatar.png" class="img-avatar">
+    <span class="mdl-layout-title">  <%= company_name %></span>
+    <nav class="mdl-navigation">
+    <a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Home </a>
+    <a class="mdl-navigation__link" href="/services?id=<%=company_id %>"> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Services</a>
+    <a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>   Info </a>
+    <a class="mdl-navigation__link" href="/geo-location?id=<%=company_id %>">  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>   Location </a>
+    <a class="mdl-navigation__link" href="">  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>   Gallery </a>
+    <a class="mdl-navigation__link" href="/company-profile?company=<%= company_id %>">  <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>    Company Profile </a>
+    <hr>
+    <a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help & Support </a>
+    <a class="mdl-navigation__link" href=""> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings </a>
+</nav>
+</div>
+<h5 class="mdl-layout__content">
+<div class="page-content">
+<div class="row profile-info">
+
+    <% for(var i=0; i<user.length; i++) {%>
+
+  <div class="col-md-3">  
+  <form method="POST"  action="/update-bg">
+    <input type="text" name="imageconve"  id="imgurls"value="" hidden>
+    
+      <label  class="label " data-toggle="tooltip" title="Change your icon">
+        <br>
+        <img class="rounded" id="avatar" src="<%= user[i].cover %>" alt="" class="image-responsive">
+      <span  class="glyphicon glyphicon-camera " style="color:white" aria-hidden="true">
+            <input type="file" class="sr-only" id="input" name="image" accept="image/*" >
+           
+          </label>
+<br>
+<br>
+          <button class="btn  btn-primary btn-block">Change Image</button>
+ </form>
+  </div>
+    
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12">
+                <div class="row profile-details">
+                        <h5> Basic Info  </h5>
+                        <hr>
+                        <div class="col-md-6">
+                        <Form>
+                            <label> Campany name</label>
+                            
+                        <input type="text" class="form-control" placeholder="eg. panatech ltd" value=" <%= user[i].name %>">
+
+                        <label> Company category</label>
+                            
+                        <input type="text" class="form-control" placeholder="Finance and banking">
+
+                        <label> Email</label>
+                            
+                        <input type="text" class="form-control" placeholder="eg. company@email.com" value=" <%= user[i].email %>">
+                        
+                        <label> Phone number</label>
+                            
+                        <input type="text" class="form-control" placeholder="eg +2507XXXXXXX" value=" <%= user[i].phone %>">
+                        </Form>
+
+                        
+                        </div>
+                        <div class="col-md-6">
+                           <Form>
+                            <label>City/State</label>
+                            
+                        <input type="text" class="form-control" placeholder="City" value=" <%= user[i].city %>">
+
+                        <label> Company  Address </label>
+                            
+                        <input type="text" class="form-control" placeholder="e.g district/sector" value=" <%= user[i].sector %>">
+
+                        <label> ZipCode </label>
+                            
+                        <input type="text" class="form-control" placeholder="Optional" value=" <%= user[i].zipcode %>">
+
+                        <label> Street number </label>
+                            
+                        <input type="text" class="form-control" placeholder="e.g KN 89 ST" value=" <%= user[i].street %>">
+                        
+                        </Form>
+                            </div>
+                          <br>
+                         
+                        <hr>
+                        <% } %>
+                
+
+              				 
+   
+ </div> </div> </div>
+
+                        </div>
+                   
+    </div>
+   
+        <hr>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+
+</div>
+</main>
+</div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Crop the image</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="img-container">
+              <img id="image" src="https://avatars0.githubusercontent.com/u/3456749" width="350" height="400">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="crop">Crop</button>
+          </div>
+        </div>
+      </div>
+    </div><div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Crop the image</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="img-container">
+              <img id="image" src="https://avatars0.githubusercontent.com/u/3456749" width="350" height="400">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="crop">Crop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--- custom Js -->
+    <script src="./js/custom.js"></script>
+    <script src="./mdl/material.js"></script>
+    <script src="./dist/cropper.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        var avatar = document.getElementById('avatar');
+        var image = document.getElementById('image');
+        var input = document.getElementById('input');
+        var $progress = $('.progress');
+        var $progressBar = $('.progress-bar');
+        var $alert = $('.alert');
+        var $modal = $('#modal');
+        var cropper;
+  
+        $('[data-toggle="tooltip"]').tooltip();
+  
+        input.addEventListener('change', function (e) {
+          var files = e.target.files;
+          var done = function (url) {
+            input.value = '';
+            image.src = url;
+            $alert.hide();
+            $modal.modal('show');
+          };
+          var reader;
+          var file;
+          var url;
+  
+          if (files && files.length > 0) {
+            file = files[0];
+  
+            if (URL) {
+              done(URL.createObjectURL(file));
+            } else if (FileReader) {
+              reader = new FileReader();
+              reader.onload = function (e) {
+                done(reader.result);
+              };
+              reader.readAsDataURL(file);
+            }
+          }
+        });
+  
+        $modal.on('shown.bs.modal', function () {
+          cropper = new Cropper(image, {
+            aspectRatio:1,
+            viewMode: 4,
+          });
+        }).on('hidden.bs.modal', function () {
+          cropper.destroy();
+          cropper = null;
+        });
+  
+        document.getElementById('crop').addEventListener('click', function () {
+          var initialAvatarURL;
+          var canvas;
+  
+          $modal.modal('hide');
+  
+          if (cropper) {
+            canvas = cropper.getCroppedCanvas({
+              width: 400,
+              height: 300,
+            });
+            initialAvatarURL = avatar.src;
+            avatar.src = canvas.toDataURL();
+           
+            $progress.show();
+            $alert.removeClass('alert-success alert-warning');
+        
+            canvas.toBlob(function (blob) {
+              var formData = new FormData();
+            //alert(canvas.toDataURL());
+              document.getElementById("imgurls").value=canvas.toDataURL();
+            
+              formData.append('avatar', blob, 'avatar.jpg');
+              $.ajax('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+  
+                xhr: function () {
+                  var xhr = new XMLHttpRequest();
+  
+                  xhr.upload.onprogress = function (e) {
+                    var percent = '0';
+                    var percentage = '0%';
+  
+                    if (e.lengthComputable) {
+                      percent = Math.round((e.loaded / e.total) * 100);
+                      percentage = percent + '%';
+                      $progressBar.width(percentage).attr('aria-valuenow', percent).text(percentage);
+                    }
+                  };
+  
+                  return xhr;
+                },
+  
+               
+  
+                complete: function () {
+                  $progress.hide();
+                },
+              });
+            });
+          }
+        });
+      });
+    </script>
+   
+  </body>
+</html>
